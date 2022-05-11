@@ -22,7 +22,7 @@ const SelectPokemon = () => {
             return;
         }
         navigate("/loading");
-        dispatch(addPokemonToTeam(id)).then(() => {navigate("/addPokemon");});
+        addPokemonToTeam(id)(dispatch).then(() => {navigate("/addPokemon");});
     }
 
     function handleChange(e) {

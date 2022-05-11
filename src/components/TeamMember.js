@@ -26,8 +26,8 @@ const TeamMember = ({name, sprite, types, moves, removePokemon, editPokemon}) =>
                 </div>
 
                 <div className="buttons">
-                    <Link to="/editPokemon" className="btn btn-warning btn-block" onClick={() => {dispatch(editPokemon())}}> Edit </Link>
-                    <a className="btn btn-danger btn-block" onClick={() => {dispatch(removePokemon())}}> Remove </a>
+                    <Link to="/editPokemon" className="btn btn-warning btn-block" onClick={() => {editPokemon()(dispatch)}}> Edit </Link>
+                    <a className="btn btn-danger btn-block" onClick={() => {removePokemon()(dispatch)}}> Remove </a>
                 </div>
             </div>
         </div>
