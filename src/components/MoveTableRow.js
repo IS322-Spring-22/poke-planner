@@ -24,7 +24,7 @@ const MoveTableRow = ({ pokemon, moves }) => {
         setMoveState(updatedMoveState);
     }
 
-    //useEffect(() => {setActive(moveState)} , [moves]);
+    useEffect(() => {setActive(moveState)} , [moves]);
 
 
     function handleClick(e) {
