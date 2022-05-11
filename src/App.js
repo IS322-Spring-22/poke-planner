@@ -48,7 +48,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home setCurrentPage={setCurrentPage}/>}/>
             <Route path='/Pokedex' element={<Pokedex setCurrentPage={setCurrentPage}/>}/>
-            <Route path='/detail' element={<Detail setCurrentPage={setCurrentPage}/>}/>
+            <Route path='/detail/:pokemonID' element={<Detail setCurrentPage={setCurrentPage}/>}/>
             <Route path='/teams' element={<Team setCurrentPage={setCurrentPage}/>}/>
             <Route path='/addPokemon' element={<AddPokemon/>}/>
             <Route path='/editPokemon' element={<AddPokemon/>}/>
