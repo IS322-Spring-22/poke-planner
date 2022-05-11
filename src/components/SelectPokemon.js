@@ -30,6 +30,14 @@ const SelectPokemon = () => {
         setID(e.id);
     }
 
+    const customStlye = {
+        option: (provided, state) => ({
+            ...provided,
+            borderBottom: '1px solid lightgray',
+            color: state.isSelected ? '#fff' : '#212121',
+        })
+    }
+
     return (
         <form onSubmit={handleSubmit}>
             <Select
@@ -37,6 +45,7 @@ const SelectPokemon = () => {
                 placeholder={"Choose Your Pok\u00E9mon!"}
                 options={Options}
                 onChange={handleChange}
+                styles={customStlye}
             />
             <button type="submit" className="add btn btn-primary btn-block">
                 {"Add Pok\u00E9mon!"}
