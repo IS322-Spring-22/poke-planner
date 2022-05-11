@@ -1,9 +1,11 @@
+import PokeAPI from "pokedex-promise-v2";
+
 let Pokedex = require("pokedex-promise-v2");
 let options = {
     protocol: 'https',
     versionPath: '/api/v2/'
 }
-let pokedex = new Pokedex(options);
+let pokedex = new PokeAPI(options);
 
 export function getPokemon(id) {
     return new Promise((resolve, reject) => {
