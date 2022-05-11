@@ -4,6 +4,7 @@ import DefaultSprite from "../images/poke-ball.png";
 import MoveList from "./MoveList";
 import { getType } from "../services/moveTypes";
 import { capitalize } from "../services/api";
+import {useDispatch} from "react-redux";
 
 const Type = (type, i) => {
     return <img src={getType(type.typeName)} alt={capitalize(type.typeName)} key={type.typeName} />
@@ -11,6 +12,7 @@ const Type = (type, i) => {
 
 const TeamMember = ({name, sprite, types, moves, removePokemon, editPokemon}) => {
     const typeList = types.map( (typeObj, i) => <Type typeName={typeObj.type.name} key={i} /> )
+    const dispatch = useDispatch();
     return (
         <div className="card col-sm-2">
             <img className="card-img-top" src={sprite || DefaultSprite} alt="Pokemon Sprite"/>
@@ -24,8 +26,8 @@ const TeamMember = ({name, sprite, types, moves, removePokemon, editPokemon}) =>
                 </div>
 
                 <div className="buttons">
-                    <Link to="/editPokemon" className="btn btn-warning btn-block" onClick={editPokemon}> Edit </Link>
-                    <a className="btn btn-danger btn-block" onClick={removePokemon}> Remove </a>
+                    <Link to="/editPokemon" className="btn btn-warning btn-block" onClick={() => {dispatch(editPokemon())}}> Edit </Link>
+                    <a className="btn btn-danger btn-block" onClick={() => {dispatch(removePokemon())}}> Remove </a>
                 </div>
             </div>
         </div>
