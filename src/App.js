@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">Poke Planner</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -43,18 +43,20 @@ function App() {
           </div>
         </div>
       </nav>
-      <Router>
-        <Routes>
-          <Route path='/' element={<Home setCurrentPage={setCurrentPage}/>}/>
-          <Route path='/Pokedex' element={<Pokedex setCurrentPage={setCurrentPage}/>}/>
-          <Route path='/detail' element={<Detail setCurrentPage={setCurrentPage}/>}/>
-          <Route path='/teams' element={<Team setCurrentPage={setCurrentPage}/>}/>
-          <Route path='/addPokemon' element={<AddPokemon/>}/>
-          <Route path='/editPokemon' element={<AddPokemon/>}/>
-          <Route path='/loading' element={<Loading/>}/>
-          <Route path="*" element={<ErrorPage/>}/>
-        </Routes>
-      </Router>
+      <div className="container-fluid">
+        <Router>
+          <Routes>
+            <Route path='/' element={<Home setCurrentPage={setCurrentPage}/>}/>
+            <Route path='/Pokedex' element={<Pokedex setCurrentPage={setCurrentPage}/>}/>
+            <Route path='/detail' element={<Detail setCurrentPage={setCurrentPage}/>}/>
+            <Route path='/teams' element={<Team setCurrentPage={setCurrentPage}/>}/>
+            <Route path='/addPokemon' element={<AddPokemon/>}/>
+            <Route path='/editPokemon' element={<AddPokemon/>}/>
+            <Route path='/loading' element={<Loading/>}/>
+            <Route path="*" element={<ErrorPage/>}/>
+          </Routes>
+        </Router>
+      </div>
     </div>
   );
 }
