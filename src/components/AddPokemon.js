@@ -14,8 +14,8 @@ const AddPokemon = () => {
     return (
         <div className="container mt-2">
             <h1 className="d-flex justify-content-center pokeName"> Moveset: {capitalize(pokemon.name)} </h1>
-            <h3 className="d-flex justify-content-center"> Click on moves to select them. Click again to remove them. </h3>
-            <div className="d-flex justify-content-center">
+            <h3 className="d-flex justify-content-center text-center"> Click on moves to select them. Click again to remove them. </h3>
+            <div className="d-md-flex justify-content-center">
                 <div id="pokeInfo">
                     <img className="rounded addTeamMemberSprite" src={pokemon.sprites.front_default || DefaultSprite} alt="Pokemon Sprite" style={{
                         width: "256 px",
@@ -26,13 +26,15 @@ const AddPokemon = () => {
                         <Link to="/teams" className="btn btn-primary btn-block toTeam col-8"> Your Team </Link>
                     </div>
                 </div>
-                <table className="table table-hover moveList">
-                    <MoveTableHeader />
-                    <MoveTableRow pokemon={pokemon} moves={pokemon.moves} />
-                </table>
+                <div className="moveTable">
+                    <table className="table table-hover moveList">
+                        <MoveTableHeader />
+                        <MoveTableRow pokemon={pokemon} moves={pokemon.moves} />
+                    </table>
+                </div>
             </div>
             <div className="row justify-content-center">
-                <Link to="/teams" className="btn btn-primary btn-block toTeam col-4"> Your Team </Link>
+                <Link to="/teams" className="toTeamButton btn btn-primary btn-block col-4"> Your Team </Link>
             </div>
 
         </div>

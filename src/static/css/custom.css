@@ -1,0 +1,66 @@
+@media (max-width: 767px) {
+    #pokeInfo, .moveTable {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(-1 * var(--bs-gutter-y));
+        margin-right: calc(-.5 * var(--bs-gutter-x));
+        margin-left: calc(-.5 * var(--bs-gutter-x));
+        justify-content: center !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .toTeam{
+        width: 120% !important;
+    }
+}
+
+@media (min-width: 1686px) {
+    .teamMemberButton {
+        flex: 0 0 auto;
+        width: 41.666667%;
+    }
+}
+
+@media (min-width: 1240px) {
+    .teamMemberCard{
+        flex: 0 0 auto;
+        width: 16%;
+    }
+}
+
+@media (max-width: 1239px) {
+    .teamMemberCard{
+        flex: 0 0 auto;
+        width: 32%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 700px) {
+    .teamMemberCard{
+        flex: 0 0 auto;
+        width: 48%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 520px) {
+    .teamMemberCard{
+        flex: 0 0 auto;
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
+
+.addTeamMemberSprite{
+    width: 256px;
+    image-rendering: pixelated;
+}
+
+.teamMemberButton{
+    font-size: 1em;
+}
+
