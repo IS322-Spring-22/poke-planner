@@ -7,7 +7,7 @@ import { capitalize } from "../services/api";
 import {useDispatch} from "react-redux";
 
 const Type = (type, i) => {
-    return <img src={getType(type.typeName)} alt={capitalize(type.typeName)} key={type.typeName} />
+    return <img src={getType(type.typeName)} alt={capitalize(type.typeName)} key={type.typeName} className="col-4" style={{imageRendering: "pixelated", paddingRight: 0}}/>
 }
 
 const TeamMember = ({name, sprite, types, moves, removePokemon, editPokemon}) => {
@@ -15,19 +15,19 @@ const TeamMember = ({name, sprite, types, moves, removePokemon, editPokemon}) =>
     const dispatch = useDispatch();
     return (
         <div className="card col-sm-2">
-            <img className="card-img-top" src={sprite || DefaultSprite} alt="Pokemon Sprite"/>
+            <img className="card-img-top" src={sprite || DefaultSprite} alt="Pokemon Sprite" style={{imageRendering: "pixelated"}}/>
             <div className="card-body">
                 <h5 className="card-title"> {name} </h5>
-                <span className="types">
+                <span className="types row">
 					{typeList}
 				</span>
-                <div className="card-text">
+                <div className="card-text mt-2">
                     <MoveList moves={moves} />
                 </div>
 
-                <div className="buttons">
-                    <Link to="/editPokemon" className="btn btn-warning btn-block" onClick={() => {editPokemon()(dispatch)}}> Edit </Link>
-                    <a className="btn btn-danger btn-block" onClick={() => {removePokemon()(dispatch)}}> Remove </a>
+                <div className="buttons mt-1 mx-auto row justify-content-around">
+                    <Link to="/editPokemon" className="btn btn-info btn-block col-5" onClick={() => {editPokemon()(dispatch)}}> Edit </Link>
+                    <a className="btn btn-danger btn-block col-5" onClick={() => {removePokemon()(dispatch)}}> Remove </a>
                 </div>
             </div>
         </div>

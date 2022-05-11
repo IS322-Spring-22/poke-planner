@@ -15,7 +15,7 @@ const TeamMemberList = ({ team, removePokemon, editPokemon }) => {
         />
     ));
     return (
-        <div className="row">
+        <div className="row mx-1 justify-content-around">
             {teamList}
         </div>
     );

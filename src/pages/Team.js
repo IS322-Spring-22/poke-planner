@@ -11,7 +11,7 @@ function Team({ setCurrentPage}) {
 
     const team = useSelector(state => state.teams.team);
     return (
-        <div>
+        <div className="mt-1">
             <h1 className="d-flex justify-content-center"> Select {"Pok\u00E9mon"} for your team! </h1>
             <TeamMemberList team={team} removePokemon={removePokemonFromTeam} editPokemon={editPokemonInTeam} />
             <SelectPokemon />
