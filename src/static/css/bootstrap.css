@@ -12011,3 +12011,8 @@ fieldset:disabled .btn {
 .modal-content .text-muted {
   color: rgba(255, 255, 255, 0.7) !important;
 }
+
+.addTeamMemberSprite{
+  width: 256px;
+  image-rendering: pixelated;
+}

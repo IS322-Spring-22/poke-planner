@@ -12,20 +12,29 @@ const AddPokemon = () => {
     });
     const moveList = useSelector((state) => state.teams.lastPokemon.moveList);
     return (
-        <div className="container">
+        <div className="container mt-2">
             <h1 className="d-flex justify-content-center pokeName"> Moveset: {capitalize(pokemon.name)} </h1>
             <h3 className="d-flex justify-content-center"> Click on moves to select them. Click again to remove them. </h3>
             <div className="d-flex justify-content-center">
                 <div id="pokeInfo">
-                    <img className="rounded addTeamMemberSprite" src={pokemon.sprites.front_default || DefaultSprite} alt="Pokemon Sprite" />
+                    <img className="rounded addTeamMemberSprite" src={pokemon.sprites.front_default || DefaultSprite} alt="Pokemon Sprite" style={{
+                        width: "256 px",
+                        imageRendering: "pixelated"
+                    }}/>
                     <MoveList moves={moveList}/>
+                    <div className="row justify-content-center mt-2">
+                        <Link to="/teams" className="btn btn-primary btn-block toTeam col-8"> Your Team </Link>
+                    </div>
                 </div>
                 <table className="table table-hover moveList">
                     <MoveTableHeader />
                     <MoveTableRow pokemon={pokemon} moves={pokemon.moves} />
                 </table>
             </div>
-            <Link to="/teams" className="btn btn-primary btn-block toTeam"> Your Team </Link>
+            <div className="row justify-content-center">
+                <Link to="/teams" className="btn btn-primary btn-block toTeam col-4"> Your Team </Link>
+            </div>
+
         </div>
     )
 }

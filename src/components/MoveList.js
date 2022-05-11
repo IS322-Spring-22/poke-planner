@@ -2,7 +2,7 @@ import React from "react";
 import { capitalize } from "../services/api";
 
 const Move = ({moveName}) => (
-    <div className="move">{capitalize(moveName)}</div>
+    <div className="move text-center">{capitalize(moveName)}</div>
 );
 
 const MoveList = props => {
