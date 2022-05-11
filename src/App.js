@@ -9,6 +9,8 @@ import Pokedex from "./pages/Pokedex";
 import Detail from "./pages/Detail";
 import Team from "./pages/Team";
 import ErrorPage from "./pages/ErrorPage";
+import AddPokemon from "./components/AddPokemon";
+import Loading from "./components/Loading";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("Home");
@@ -41,17 +43,18 @@ function App() {
           </div>
         </div>
       </nav>
-      <div className="container-fluid">
-        <Router>
-          <Routes>
-            <Route path='/' element={<Home setCurrentPage={setCurrentPage}/>}/>
-            <Route path='/Pokedex' element={<Pokedex setCurrentPage={setCurrentPage}/>}/>
-            <Route path='/detail' element={<Detail setCurrentPage={setCurrentPage}/>}/>
-            <Route path='/teams' element={<Team setCurrentPage={setCurrentPage}/>}/>
-            <Route path="*" element={<ErrorPage/>}/>
-          </Routes>
-        </Router>
-      </div>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home setCurrentPage={setCurrentPage}/>}/>
+          <Route path='/Pokedex' element={<Pokedex setCurrentPage={setCurrentPage}/>}/>
+          <Route path='/detail' element={<Detail setCurrentPage={setCurrentPage}/>}/>
+          <Route path='/teams' element={<Team setCurrentPage={setCurrentPage}/>}/>
+          <Route path='/addPokemon' element={<AddPokemon/>}/>
+          <Route path='/editPokemon' element={<AddPokemon/>}/>
+          <Route path='/loading' element={<Loading/>}/>
+          <Route path="*" element={<ErrorPage/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
