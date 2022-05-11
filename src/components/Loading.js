@@ -3,12 +3,12 @@ import ReactLoading from "react-loading";
 
 const Loading = () => {
     return (
-        <div className="d-flex justify-content-center">
-            <div className="innerLoad">
-                <ReactLoading type={"spin"} color="#357EDD" />
+        <div className="container">
+            <div className="innerLoad row justify-content-center mt-2">
+                <ReactLoading type={"spin"} color="#80f679" height={128} width={128}/>
             </div>
-            <div className="innerLoadText">
-                <h3 className="loading-text"> Loading Moveset </h3>
+            <div className="innerLoadText row justify-content-center">
+                <h1 className="loading-text text-center"> Loading Moveset </h1>
             </div>
         </div>
     )
