@@ -14,7 +14,11 @@ const SelectPokemon = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if(numPokemon >= 6 || id === 0) {
+        if (numPokemon >= 6) {
+            alert("You can't have more than 6 pokemon!");
+            return;
+        } else if (id === 0) {
+            alert("You must select a pokemon!");
             return;
         }
         navigate("/loading");
