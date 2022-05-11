@@ -1,8 +1,6 @@
 import React from 'react';
 
-function ErrorPage({ setCurrentPage }) {
-  setCurrentPage("");
-
+function ErrorPage() {
   return (
     <div>
       <h1 className="text-center">ERROR 404</h1>
