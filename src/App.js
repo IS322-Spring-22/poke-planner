@@ -50,6 +50,7 @@ function App() {
           <Route path='/detail' element={<Detail setCurrentPage={setCurrentPage}/>}/>
           <Route path='/teams' element={<Team setCurrentPage={setCurrentPage}/>}/>
           <Route path='/addPokemon' element={<AddPokemon/>}/>
+          <Route path='/editPokemon' element={<AddPokemon/>}/>
           <Route path='/loading' element={<Loading/>}/>
           <Route path="*" element={<ErrorPage/>}/>
         </Routes>
