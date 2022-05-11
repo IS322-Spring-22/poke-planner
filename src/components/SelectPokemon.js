@@ -48,7 +48,7 @@ const SelectPokemon = () => {
                 styles={customStlye}
                 className={'col-4 mx-auto mt-1'}
             />
-            <div className={'row mt-1'}>
+            <div className={'row mt-1 mx-0'}>
                 <button type="submit" className="add btn btn-primary btn-block col-1 mx-auto">
                     {"Add Pok\u00E9mon!"}
                 </button>
