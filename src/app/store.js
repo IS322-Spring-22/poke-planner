@@ -6,6 +6,9 @@ export const store = configureStore({
   reducer: {
     teams: pokemon
   },
-  devTools: true
-  ,
+  devTools: true,
+  middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: false,
+      }),
 });
