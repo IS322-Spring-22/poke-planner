@@ -43,18 +43,20 @@ function App() {
           </div>
         </div>
       </nav>
-      <Router>
-        <Routes>
-          <Route path='/' element={<Home setCurrentPage={setCurrentPage}/>}/>
-          <Route path='/Pokedex' element={<Pokedex setCurrentPage={setCurrentPage}/>}/>
-          <Route path='/detail' element={<Detail setCurrentPage={setCurrentPage}/>}/>
-          <Route path='/teams' element={<Team setCurrentPage={setCurrentPage}/>}/>
-          <Route path='/addPokemon' element={<AddPokemon/>}/>
-          <Route path='/editPokemon' element={<AddPokemon/>}/>
-          <Route path='/loading' element={<Loading/>}/>
-          <Route path="*" element={<ErrorPage/>}/>
-        </Routes>
-      </Router>
+      <div className="container-fluid">
+        <Router>
+          <Routes>
+            <Route path='/' element={<Home setCurrentPage={setCurrentPage}/>}/>
+            <Route path='/Pokedex' element={<Pokedex setCurrentPage={setCurrentPage}/>}/>
+            <Route path='/detail' element={<Detail setCurrentPage={setCurrentPage}/>}/>
+            <Route path='/teams' element={<Team setCurrentPage={setCurrentPage}/>}/>
+            <Route path='/addPokemon' element={<AddPokemon/>}/>
+            <Route path='/editPokemon' element={<AddPokemon/>}/>
+            <Route path='/loading' element={<Loading/>}/>
+            <Route path="*" element={<ErrorPage/>}/>
+          </Routes>
+        </Router>
+      </div>
     </div>
   );
 }
