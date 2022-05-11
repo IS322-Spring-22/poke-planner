@@ -47,19 +47,19 @@ export const removePokemonFromTeam = pokemon => {
 }
 
 export const editPokemonInTeam = pokemon => {
-    return dispatch => {
+    return async function (dispatch){
         dispatch(editPokemon(pokemon));
     }
 }
 
 export const addMoveToList = (pokemon, move) => {
-    return dispatch => {
-        dispatch(addMove(pokemon, move));
+    return async function (dispatch){
+        await dispatch(addMove(pokemon, move));
     }
 }
 
 export const removeMoveFromList = (pokemon, move) => {
-    return dispatch => {
+    return async function (dispatch){
         dispatch(removeMove(pokemon, move));
     }
 }
