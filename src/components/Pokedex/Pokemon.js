@@ -1,11 +1,17 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import Badge from "./Badge";
 
-function Pokemon({ name, key, loading }) {
+function Pokemon({ name, loading }, props) {
   const [ pokemonImg, setPokemonImg ] = useState();
   const [ pokemonTypes, setPokemonTypes ] = useState([]);
   const [ pokemonID, setPokemonID ] = useState();
+  const navigate = useNavigate();
+
+  function clickHandler() {
+    navigate(`/detail/${pokemonID}`);
+  }
 
   useEffect( () => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`).then(res =>{
@@ -16,8 +22,8 @@ function Pokemon({ name, key, loading }) {
   }, [])
 
   return (
-    <div className="col" key={key}>
-      <div className="card">
+    <div className="col" onClick={clickHandler} {...props}>
+      <div className="card card-hover">
         <div className="row">
           <div className="col">
             <img className='w-100' src={pokemonImg} alt={name}/>
@@ -28,8 +34,8 @@ function Pokemon({ name, key, loading }) {
             <h5 className="card-title text-center text-capitalize"># {pokemonID}</h5>
             <div className="d-flex justify-content-around">
               {
-                pokemonTypes.map(type => {
-                  return <Badge name={type.type.name}/>
+                pokemonTypes.map((type, i) => {
+                  return <Badge key={`${type}-${i}`} name={type.type.name}/>
                 })
               }
             </div>

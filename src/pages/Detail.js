@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 
 function Detail({ setCurrentPage }) {
-  setCurrentPage("Detail");
+    const { pokemonID } = useParams();
+
+    useEffect( () => {
+        console.log("Pokemon ID: " + pokemonID);
+    }, [pokemonID]);
+
+    setCurrentPage("Detail");
 
   return (
     <div>
