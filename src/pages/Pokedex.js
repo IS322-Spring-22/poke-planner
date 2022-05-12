@@ -4,8 +4,7 @@ import Pagination from "../components/Pokedex/Pagination";
 import Loading from "./Loading";
 import axios from "axios";
 
-function Pokedex({ setCurrentPage }) {
-  setCurrentPage("Pokedex");
+function Pokedex() {
   const [ pokemon, setPokemon ] = useState([]);
   const [currentPageURL, setCurrentPageURL] = useState("https://pokeapi.co/api/v2/pokemon?limit=20");
   const [ nextPageURL, setNextPageURL ] = useState();
