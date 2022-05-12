@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
 import Pokedex from "./pages/Pokedex";
 import Detail from "./pages/Detail";
 import Team from "./pages/Team";
@@ -17,13 +16,11 @@ import Loading from "./components/Loading";
 function App() {
 
   return (
-
       <Router>
         <Navbar/>
         <div className="container-fluid">
           <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/Pokedex' element={<Pokedex/>}/>
+            <Route path='/' element={<Pokedex/>}/>
             <Route path='/detail/:pokemonID' element={<Detail/>}/>
             <Route path='/teams' element={<Team/>}/>
             <Route path='/addPokemon' element={<AddPokemon/>}/>
