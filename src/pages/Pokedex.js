@@ -27,7 +27,7 @@ function Pokedex() {
         loading ?
           <Loading /> :
           <div>
-            <div className={`row row-cols-1 row-cols-md-4 row-cols-md-5 g-4`}>
+            <div className={`row row-cols-1 row-cols-md-4 row-cols-xl-5 g-4`}>
               { pokemon.map(p => (
                 <Pokemon key={p} name={p} loading={loading} />
               )) }
